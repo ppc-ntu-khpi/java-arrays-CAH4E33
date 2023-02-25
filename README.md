@@ -4,8 +4,6 @@
 ```java
 package domain;
 
-import java.util.Random;
-
 public class Exercise {
 
     /**
@@ -14,9 +12,9 @@ public class Exercise {
     private int N;
 
     /**
-     * Масив, що зберігає випадкові числа.
+     * Масив, що зберігає цілі числа.
      */
-    private int array[];
+    private int[] array;
 
     /**
      * Метод, який встановлює розмір та ініціалізує масив.
@@ -29,37 +27,27 @@ public class Exercise {
     }
 
     /**
-     * Об'єкт класу Random для генерації випадкових чисел.
-     */
-    private Random random = new Random();
-
-    /**
-     * Метод, який завонює масив випадковими числами.
-     */
-    public void GenArray() {
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(100) + 1;
-        }
-    }
-
-    /**
      * Метод виводу масива.
      */
     public void displayArray() {
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i] + " ");
+        for (int elem : array) {
+            System.out.println(elem);
         }
-        System.out.println();
     }
 
     /**
-     * Метод, що змінює елементи масиву за завданням.
+     * Метод, що заповнює масив за завданням.
      */
-    public void updateArray() {
+    public void fillArray() {
         int j = 0;
+        int k = 0;
         for (int i = N / 2; i < array.length; i++) {
             array[i] = j;
             j++;
+        }
+        for (int i = N / 2; i >= 0; i--) {
+            array[i] = k;
+            k++;
         }
     }
 }
@@ -73,15 +61,12 @@ import domain.Exercise;
 public class TestResult {
     public static void main(String[] args) {
         Exercise test = new Exercise();
-        test.setSize(10);
-        test.GenArray();
-        test.displayArray();
-        test.updateArray();
+        test.setSize(11);
+        test.fillArray();
         test.displayArray();
 
     }
 }
-
 ```
 ----
 ## Результат роботи програми
