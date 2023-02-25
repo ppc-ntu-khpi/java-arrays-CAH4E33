@@ -70,4 +70,4 @@ public class TestResult {
 ```
 ----
 ## Результат роботи програми
-<img src="Result3.png">
+<img src="Resultt.png">
